@@ -19,13 +19,16 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+        // create database instance
         appDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "desh").allowMainThreadQueries().build();
+        // get all data from database using Dao methode and save it in the list
         List<Desh> deshesList = appDatabase.deshDao().getAll();
+        // get the RecyclerView by id and set the layout
         RecyclerView deshesListRecyclerView = findViewById(R.id.deshRecyclerView);
         deshesListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // set the adapter
         deshesListRecyclerView.setAdapter(new DeshAdapter(deshesList));
-
+        // on click listener to back to main activity
         Button homeFromMenu = findViewById(R.id.homeFromMenu);
         homeFromMenu.setOnClickListener(new View.OnClickListener() {
             @Override

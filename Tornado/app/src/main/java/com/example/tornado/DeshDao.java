@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
-
+// DeshDao and the methods the app uses to interact with database
 @Dao
 public interface DeshDao {
 

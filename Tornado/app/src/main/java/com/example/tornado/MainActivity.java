@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // on click listener on the menu button to direct to menu activity
         Button goToMenuButton = findViewById(R.id.menuButton);
         goToMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToMenu);
             }
         });
-
+        // on click listener on the add dish button to direct to AddDesh activity
         Button addDeshButton = findViewById(R.id.addDeshButton);
         addDeshButton.setOnClickListener(new View.OnClickListener() {
             @Override

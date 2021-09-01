@@ -16,13 +16,14 @@ import java.util.List;
 
 public class DeshAdapter extends RecyclerView.Adapter<DeshAdapter.DeshViewHolder> {
 
+    // a list to bind data
     List<Desh> DeshesList = new ArrayList<Desh>();
 
     public DeshAdapter(List<Desh> DeshesList) {
         this.DeshesList = DeshesList;
     }
 
-
+    // DeshViewHolder to Wraps the view
     public static class DeshViewHolder extends RecyclerView.ViewHolder {
         public Desh desh;
         View itemView;
@@ -30,7 +31,7 @@ public class DeshAdapter extends RecyclerView.Adapter<DeshAdapter.DeshViewHolder
         public DeshViewHolder(@NonNull View itemView) {
             super(itemView);
             this.itemView = itemView;
-
+            // add on click listener on the views to send the clicked data to details page and redirect to the page
             itemView.setOnClickListener((view -> {
                 Intent goToDetails = new Intent(view.getContext(), DeshDetails.class);
                 goToDetails.putExtra("dishName", desh.dishName);
